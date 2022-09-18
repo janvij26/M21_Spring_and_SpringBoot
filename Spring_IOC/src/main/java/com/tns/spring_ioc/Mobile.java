@@ -24,7 +24,8 @@ public class Mobile {
 		j.data();
 		*/
 		
-		@SuppressWarnings({ "resource", "unused" })
+
+		@SuppressWarnings("resource")
 		ApplicationContext a=new ClassPathXmlApplicationContext("beans.xml");
 		System.out.println("Configuration loaded");
 		
