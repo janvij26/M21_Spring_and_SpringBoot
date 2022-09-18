@@ -3,7 +3,7 @@ package com.tns.spring_ioc;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Mobile{
+public class Mobile {
 
 	public static void main(String[] args) 
 	{
@@ -13,36 +13,34 @@ public class Mobile{
 		//hard-coding*/
 		
 		/*
-		// for Airtel class methods
-		Airtel a= new Airtel();
-		a.calling();
-		a.data();
+		//for Vi class methods
+		Vi v= new Vi();
+		v.calling();
+		v.data();
 		
-		// for Jio class methods
+		//for Jio class methods
 		Jio j=new Jio();
 		j.calling();
 		j.data();
 		*/
 		
-		@SuppressWarnings("resource")
-		ApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
+		@SuppressWarnings({ "resource", "unused" })
+		ApplicationContext a=new ClassPathXmlApplicationContext("beans.xml");
 		System.out.println("Configuration loaded");
 		
-		/*
-		 * //for vi class
-		Airtel a=(Airtel)a.getBean("airtel");
-		a.calling();
-		a.data();
+		/*//for vi class
+		Vi v=(Vi)a.getBean("vi");
+		v.calling();
+		v.data();
 		
-		// For Jio class
+		//for jio class
 		Jio j=(Jio)a.getBean("jio");
 		j.calling();
 		j.data(); */
 		
-		Sim s=ac.getBean("sim",Sim.class);
+		Sim s=a.getBean("sim",Sim.class);
 		s.calling();
 		s.data();
-	
 	}
 
 }
